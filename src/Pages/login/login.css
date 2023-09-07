@@ -1,0 +1,129 @@
+html {
+  background-color: #bfc2cd;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  background-color: #fff;
+  width: 72vw;
+  height: 90vh;
+  border-radius: 15px;
+}
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+/* left */
+.left-form {
+  background-color: #f2f4f8;
+  border-radius: 15px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1.2fr 1.5fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c";
+}
+.logo {
+  grid-area: "a";
+  margin: 40px;
+  font-size: 40px !important;
+  color: #3c37ff !important;
+}
+.text-container {
+  grid-area: "b";
+  padding-left: 40px;
+  max-width: 480px;
+}
+.left-header {
+  font-size: 28px;
+  max-width: 390px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  line-height: 45px;
+}
+.left-subheader {
+  color: #787c89;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.card-container {
+  grid-area: "c";
+  margin-left: 40px;
+  background-color: #2d3346;
+  border-radius: 15px;
+  width: 450px;
+  height: 220px;
+  padding: 20px;
+}
+.text {
+  color: #eee5e5;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  height: 35%;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.profile {
+  margin-left: 20px;
+}
+.name {
+  color: #eee5e5;
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.job {
+  color: #787d8c;
+  font-size: 11px;
+}
+.round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.container {
+  display: flex;
+}
+/* right */
+.right-form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 50px 20px 10px;
+  height: 70%;
+  margin-left: 20px;
+}
+.right-header {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.right-subheader {
+  font-size: 15px;
+  color: #787c89;
+  font-weight: 400;
+}
+.login-btn {
+  background-color: #3c37ff !important;
+  padding: 12px !important;
+  border-radius: 10px !important;
+  font-style: normal !important;
+}
+.forgot {
+  text-decoration: none;
+}
