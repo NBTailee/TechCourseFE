@@ -2,27 +2,40 @@ import { TextField, Button } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import "./login.css";
+import { useState } from "react";
+import axios from "../../axios";
+const handleLogin = async (username, password) => {
+  const payload = {
+    username: username,
+    password: password,
+  };
+  try {
+    const res = await axios.post("/auth/login", payload);
+    console.log("Tai check ==>: handleLogin -> res", res);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="login-container">
       <div className="form-container">
         <div className="left-form">
           <LocalLibraryIcon className="logo" />
           <div className="text-container">
-            <h1 className="left-header">
-              We can recommend a great deal of IT courses.
-            </h1>
+            <h1 className="left-header">We can recommend a great deal of IT courses.</h1>
             <h5 className="left-subheader">
-              With 300+ online course you can explore and find information about
-              available courses.
+              With 300+ online course you can explore and find information about available courses.
             </h5>
           </div>
           <div className="card-container">
             <h4 className="text">
-              “I think as a company, if you can get those two things right –
-              having a clear direction on what you are trying to do and bringing
-              in great people who can execute on the stuff – then you can do
-              pretty well."
+              “I think as a company, if you can get those two things right – having a clear
+              direction on what you are trying to do and bringing in great people who can execute on
+              the stuff – then you can do pretty well."
             </h4>
             <div className="flex-container">
               <div className="container">
@@ -51,6 +64,9 @@ function Login() {
             // variant="filled"
             className="form-input"
             size="medium"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
           />
           <TextField
             color="success"
@@ -60,11 +76,20 @@ function Login() {
             className="form-input"
             size="medium"
             type="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
           <a href="#" className="forgot">
             Forgot password?
           </a>
-          <Button className="login-btn" variant="contained">
+          <Button
+            className="login-btn"
+            variant="contained"
+            onClick={() => {
+              handleLogin(username, password);
+            }}
+          >
             Login
           </Button>
         </div>
